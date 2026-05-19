@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Search Tree Visualizer</title>
+    <link rel="stylesheet" href="../static/css/BST.css">
+</head>
+
+<body>
+    <div class="Dashboard" style="display: flex;">
+        <div class="side-bar">
+            <section class="top">
+                <img src="../static/svg for home/logo.svg" alt="">
+                <p style="padding: 0 4px;">StructViz</p>
+            </section>
+
+            <section class=" bottom">
+                <ol>
+                    <li>Navigation
+                        <Ul>
+                            <li><a href="../index.html" class="d1">Home</a></li>
+                            <li><a href="../dashboard/">Data Structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Data Structure
+                        <Ul>
+                            <li><a href="../stack/">Stacks</a></li>
+                            <li><a href="../queue/">Queue</a></li>
+                            <li><a href="../linkedlist/">Linked List</a></li>
+                            <li><a href="../heap/">Heap</a></li>
+                            <li><a href="../bubble/">Bubble-Sort</a></li>
+                            <li><a href="../bst/">Binary Search Tree</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>Application
+                       <ul>
+                            <li>Infix to Postfix Conversion</li>
+                        </ul>
+                    </li>  -->
+                    </0l>
+            </section>
+        </div>
+
+
+        <div class="main-body" id="mainBody" style="padding-left: 10px;">
+            <div class="d-nav">
+                <img src="../static/svg for Dashboard/side-bar.svg" alt="" id="toggleSidebar"
+                    style="cursor: pointer;">
+                <a href="../index.html" class="d1">Home</a>
+
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                <a href="../dashboard/" class="d1">Dashboard</a>
+
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                <a href="../bst/" class="d1">Binary Search Tree</a>
+            </div>
+
+
+            <div class="container">
+
+                <div class="header">
+                    <h1>Binary Search Tree</h1>
+                    <p>Left child &lt; Node &lt; Right child</p>
+                </div>
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('visual')">Visualization</button>
+                    <button class="tab" onclick="showTab('explain')">Explanation</button>
+                </div>
+
+                <!-- Controls -->
+
+                <div class="main" id="visual">
+
+
+                    <div>
+
+                        <div class="controls">
+
+                            <h3>BST Controls</h3>
+
+                            <div class="input-row">
+                                <input id="valueInput" type="text" placeholder="Enter value">
+                                <button class="insert-btn" onclick="insertNode()">Insert</button>
+                            </div>
+
+                            <div class="button-row">
+                                <button class="delete-btn" onclick="deleteNode()">Delete</button>
+                                <button class="clear-btn" onclick="clearTree()">Clear</button>
+                            </div>
+
+                        </div>
+
+                        <div class="history-panel">
+
+                            <h3>Operation History</h3>
+
+                            <ul id="historyList"></ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Visualization -->
+
+                    <div class="visualizer">
+
+                        <div class="board">
+
+                            <svg id="edges"></svg>
+
+                            <div id="tree"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- EXPLANATION -->
+            <div id="explain" class="explanation">
+
+                <div class="exp-main">
+
+                    <h1>Understanding Binary Search Tree (BST)</h1>
+
+                    <p class="intro">
+                        Imagine a smart decision tree 🌳 where every choice depends on comparison.
+                        Smaller values go to the left, and larger values go to the right.
+                        This is how a <b>Binary Search Tree (BST)</b> organizes data efficiently.
+                    </p>
+
+                    <h2>What is a Binary Search Tree?</h2>
+                    <p>
+                        A <b>Binary Search Tree</b> is a special type of binary tree where:
+                    </p>
+
+                    <ul>
+                        <li>Left child contains values <b>smaller</b> than the parent</li>
+                        <li>Right child contains values <b>greater</b> than the parent</li>
+                        <li>This rule applies recursively to every node</li>
+                    </ul>
+
+                    <h2>Basic Structure</h2>
+
+                    <p class="label">Example BST:</p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        20 <br>
+                        / &nbsp;&nbsp; \ <br>
+                        10 &nbsp;&nbsp; 30 <br>
+                        / \ <br>
+                        5 15
+                    </p>
+
+                    <p>
+                        Here, every node follows the BST rule:
+                        left values are smaller, right values are larger.
+                    </p>
+
+                    <h2>How Insertion Works</h2>
+
+                    <p>
+                        Let’s insert values: <b>20, 10, 30, 5, 15</b>
+                    </p>
+
+                    <p>
+                        1. First element becomes the <b>root</b>
+                        2. Compare new value with root
+                        3. Move left if smaller, right if larger
+                        4. Repeat until the correct position is found
+                    </p>
+
+                    <h2>Step-by-Step Growth</h2>
+
+                    <p style="text-align:center; font-size:20px;">
+                        20 → (root)
+                    </p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        10 goes left → 20 ← 10
+                    </p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        30 goes right → 20 → 30
+                    </p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        5 goes left of 10
+                    </p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        15 goes right of 10
+                    </p>
+
+                    <h2>Traversal Methods</h2>
+
+                    <ul>
+                        <li><b>Inorder (Left → Root → Right):</b> Gives sorted output</li>
+                        <li><b>Preorder (Root → Left → Right)</b></li>
+                        <li><b>Postorder (Left → Right → Root)</b></li>
+                    </ul>
+
+                    <h2>Example Traversal</h2>
+
+                    <p>
+                        For the above tree:
+                    </p>
+
+                    <ul>
+                        <li>Inorder → <b>5, 10, 15, 20, 30</b></li>
+                        <li>Preorder → <b>20, 10, 5, 15, 30</b></li>
+                        <li>Postorder → <b>5, 15, 10, 30, 20</b></li>
+                    </ul>
+
+                    <h2>Why Use BST?</h2>
+
+                    <ul>
+                        <li>Fast searching (O(log n) in balanced case)</li>
+                        <li>Maintains sorted order automatically</li>
+                        <li>Efficient insertion and deletion</li>
+                    </ul>
+
+                    <h2>Real-Life Applications</h2>
+
+                    <ul>
+                        <li>Database indexing</li>
+                        <li>Search systems</li>
+                        <li>Auto-suggestion features</li>
+                    </ul>
+
+                    <p class="conclusion">
+                        👉 A BST is like an intelligent sorting system that organizes data as you insert it.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.getElementById("toggleSidebar");
+        const sidebar = document.querySelector(".side-bar");
+        const mainBody = document.getElementById("mainBody");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("closed");
+            mainBody.classList.toggle("shifted");
+        });
+    </script>
+
+    <script src="../static/js/BST.js"></script>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bubble Sort Visualizer</title>
+    <link rel="stylesheet" href="../static/css/Bubble.css">
+</head>
+
+<body>
+    <div class="Dashboard" style="display: flex;">
+        <div class="side-bar">
+            <section class="top">
+                <img src="../static/svg for home/logo.svg" alt="">
+                <p style="padding: 0 4px;">StructViz</p>
+            </section>
+
+            <section class=" bottom">
+                <ol>
+                    <li>Navigation
+                        <Ul>
+                            <li><a href="../index.html" class="d1">Home</a></li>
+                            <li><a href="../dashboard/">Data Structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Data Structure
+                        <Ul>
+                            <li><a href="../stack/">Stacks</a></li>
+                            <li><a href="../queue/">Queue</a></li>
+                            <li><a href="../linkedlist/">Linked List</a></li>
+                            <li><a href="../heap/">Heap</a></li>
+                            <li><a href="../bubble/">Bubble-Sort</a></li>
+                            <li><a href="../bst/">Binary Search Tree</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>Application
+                        <ul>
+                            <li>Infix to Postfix Conversion</li>
+                        </ul>
+                    </li> -->
+                    </0l>
+            </section>
+
+
+
+        </div>
+
+
+        <!-- MAIN -->
+        <div class="main-body" id="mainBody" style="padding-left: 10px;">
+            <div class="d-nav">
+                <img src="../static/svg for Dashboard/side-bar.svg" alt="" id="toggleSidebar"
+                    style="cursor: pointer;">
+                <a href="../index.html" class="d1">Home</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                 <a href="../dashboard/" class="d1">Dashboard</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                 <a href="../bubble/" class="d1">Bubble-Sort</a>
+            </div>
+
+            <div class="container">
+
+                <div class="header">
+                    <h1>Bubble Sort</h1>
+                    <p>Simple comparison-based sorting algorithm</p>
+                </div>
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('visual')">Visualization</button>
+                    <button class="tab" onclick="showTab('explain')">Explanation</button>
+                </div>
+
+                <div class="main" id="visual">
+
+                    <!-- LEFT PANEL -->
+                    <div>
+
+                        <div class="controls">
+                            <h3>Controls</h3>
+
+                            <input id="arrayInput" type="text" placeholder="e.g. 5 3 8 2">
+
+                           <div class="button-row">
+
+    <button onclick="setArray()">Set</button>
+
+    <button style="background:#2563eb; color:white;"
+        onclick="randomArray()">
+        Random
+    </button>
+
+    <button style="background:green; color:white;"
+        onclick="startBubbleSort()">
+        Start
+    </button>
+
+    <button id="nextBtn"
+        style="background:#f59e0b; color:white;"
+        onclick="nextStep()">
+        Next
+    </button>
+
+    <button style="background:#7f1d1d; color:white;"
+        onclick="clearArray()">
+        Clear
+    </button>
+
+</div>
+                        </div>
+
+                        <div class="history-panel">
+                            <h3>History</h3>
+                            <ul id="historyList" style="padding: 10px;"></ul>
+                        </div>
+
+                    </div>
+
+                    <!-- VISUAL -->
+                    <div class="visualizer">
+                        <div class="board">
+                            <div id="arrayContainer" class="array"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="explain" class="explanation">
+
+                <div class="exp-main">
+
+                    <h1>Understanding Bubble Sort</h1>
+
+                    <p class="intro">
+                        Imagine bubbles rising in water 🫧.
+                        The smaller bubbles stay below while the larger ones rise to the top.
+                        This is exactly how <b>Bubble Sort</b> works — the largest elements “bubble up” to their correct
+                        position.
+                    </p>
+
+                    <h2>What is Bubble Sort?</h2>
+                    <p>
+                        <b>Bubble Sort</b> is a simple sorting algorithm that repeatedly compares
+                        adjacent elements and swaps them if they are in the wrong order.
+                    </p>
+
+                    <h2>How It Works</h2>
+
+                    <p>
+                        1. Compare the first two elements
+                        2. Swap them if needed
+                        3. Move to the next pair
+                        4. Repeat until the largest element reaches the end
+                        5. Continue for remaining elements
+                    </p>
+
+                    <h2>Step-by-Step Example</h2>
+
+                    <p>
+                        Let’s sort the array: <b>5, 3, 8, 2</b>
+                    </p>
+
+                    <p class="label">Initial:</p>
+                    <p style="text-align:center; font-size:20px;">5 → 3 → 8 → 2</p>
+
+                    <p class="label">Pass 1:</p>
+                    <p style="text-align:center; font-size:20px;">3 → 5 → 2 → 8</p>
+
+                    <p class="label">Pass 2:</p>
+                    <p style="text-align:center; font-size:20px;">3 → 2 → 5 → 8</p>
+
+                    <p class="label">Pass 3:</p>
+                    <p style="text-align:center; font-size:20px;">2 → 3 → 5 → 8</p>
+
+                    <p>
+                        Now the array is sorted.
+                    </p>
+
+                    <h2>Key Concept</h2>
+
+                    <p>
+                        After each pass, the largest unsorted element moves to its correct position.
+                    </p>
+
+                    <h2>Time Complexity</h2>
+
+                    <ul>
+                        <li><b>Best Case:</b> O(n) (already sorted)</li>
+                        <li><b>Average Case:</b> O(n²)</li>
+                        <li><b>Worst Case:</b> O(n²)</li>
+                    </ul>
+
+                    <h2>Why Use Bubble Sort?</h2>
+
+                    <ul>
+                        <li>Easy to understand and implement</li>
+                        <li>Good for learning sorting basics</li>
+                        <li>Works well for very small datasets</li>
+                    </ul>
+
+                    <h2>Limitations</h2>
+
+                    <ul>
+                        <li>Slow for large datasets</li>
+                        <li>Too many comparisons and swaps</li>
+                    </ul>
+
+                    <h2>Real-Life Analogy</h2>
+
+                    <p>
+                        Think of students lining up by height 👦👧.
+                        They compare with the person next to them and swap places until everyone is in order.
+                    </p>
+
+                    <p class="conclusion">
+                        👉 Bubble Sort is simple and intuitive, making it perfect for beginners to understand sorting
+                        concepts.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        const toggleBtn = document.getElementById("toggleSidebar");
+        const sidebar = document.querySelector(".side-bar");
+        const mainBody = document.getElementById("mainBody");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("closed");
+            mainBody.classList.toggle("shifted");
+        });
+    </script>
+    <script src="../static/js/bubble.js"></script>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+
+</html>
