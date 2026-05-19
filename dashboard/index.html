@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="Dashboard" style="display: flex;">
+        <div class="side-bar">
+            <section class="top">
+                <img src="../static/svg for home/logo.svg" alt="">
+                <p style="padding: 0 4px;">StructViz</p>
+            </section>
+
+            <section class=" bottom">
+                <ol>
+                    <li>Navigation
+                        <Ul>
+                            <li><a href="../index.html" class="d1">Home</a></li>
+                            <li><a href="../dashboard/">Data Structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Data Structure
+                        <Ul>
+                            <li><a href="../stack/">Stacks</a></li>
+                            <li><a href="../queue/">Queue</a></li>
+                            <li><a href="../linkedlist/">Linked List</a></li>
+                            <li><a href="../heap/">Heap</a></li>
+                            <li><a href="../bubble/">Bubble-Sort</a></li>
+                            <li><a href="../bst/">Binary Search Tree</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>Application
+                        <ul>
+                            <li>Infix to Postfix Conversion</li>
+                        </ul>
+                    </li> -->
+                    </0l>
+            </section>
+
+
+
+        </div>
+        <div class="main-body" id="mainBody" style="padding-left: 10px;">
+            <div class="d-nav">
+                <img src="../static/svg for Dashboard/side-bar.svg" alt="" id="toggleSidebar"
+                    style="cursor: pointer;">
+                <a href="../index.html" class="d1">Home</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                <a href="../dashboard/" class="d1">Dashboard</a>
+            </div>
+            <div class="dashboard-cards">
+                <main>
+                    <header class="dashboard-text">
+                        <section>
+                            <p><img src="../static/svg for home/logo.svg" alt="">StructViz</p>
+                        </section>
+                        <p class="sub" style="max-width: 42rem;">Interactive visualizations to help you understand data
+                            structures and algorithms. Explore,
+                            learn, and see how they work in real-time.</p>
+                    </header>
+                    <h1 class="headding">Data Structures</h1>
+                    <div class="cards">
+                        <div class="card1">
+                            <a class="link" href="../stack/">
+                                <div class="img-d"><img
+                                        src="../static/svg for Dashboard/Stacks.svg" alt="">
+                                </div>
+
+                                <h2>Stack</h2>
+
+                                <p>LIFO data structure with push and pop operations</p>
+                            </a>
+                        </div>
+
+                        <div class="card2">
+                            <a class="link" href="../queue/">
+                                <div class="img-d"><img
+                                    src="../static/svg for Dashboard/queue.svg" alt="">
+                                </div>
+
+                              <h2>Queue</h2>
+
+                               <p>FIFO data structure with enqueue and dequeue operations</p>
+                            </a>
+                        </div>
+
+                        <div class="card3">
+                            <a class="link" href="../linkedlist/">
+                                <div class="img-d"><img
+                                        src="../static/svg for Dashboard/LL.svg" alt=""></div>
+
+                                <h2>Link List</h2>
+
+                                <p>Linear data structure with elements linked using pointers</p>
+                            </a>
+                        </div>
+
+                        <div class="card4">
+                            <a class="link" href="../bst/">
+                                <div class="img-d"><img
+                                        src="../static/svg for Dashboard/BST.svg" alt="">
+                                </div>
+                                <h2>Binary-Search Tree</h2>
+                                <p>Basic binary tree with BST properties</p>
+                            </a>
+                        </div>
+
+                        <div class="card5">
+                            <a class="link" href="../bubble/">
+                                 <div class="img-d"><img src="../static/svg for Dashboard/Bubble.svg" alt=""> 
+                                </div>
+                                <h2>Bubble-Sort</h2>
+                                <p>A simple sorting algorithm that repeatedly compares and swaps adjacent elements</p>
+                            </a>
+                        </div>
+
+
+                        <div class="card6">
+                            <a class="link" href="../heap/">
+                                <div class="img-d"><img
+                                        src="../static/svg for Dashboard/heaps.svg" alt="">
+                                </div>
+                                <h2>Heaps</h2>
+                                <p>Priority queue implemented using a binary tree with heap properties</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- <h1 class="headding">Applications</h1>
+                    <div class="cards">
+                        <div class="card7">
+                            <div class="img-d"><img
+                                    src="../static/svg for Dashboard/calculate.svg" alt="">
+                            </div>
+                            <a class="link" href="../convert/">
+                                <h2>Infix to Postfix Conversion</h2>
+                            </a>
+                            <p>Visualize the conversion of infix expressions to postfix notation using a stack.</p>
+                        </div>
+                    </div> -->
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById("toggleSidebar");
+        const sidebar = document.querySelector(".side-bar");
+        const mainBody = document.getElementById("mainBody");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("closed");
+            mainBody.classList.toggle("shifted");
+        });
+    </script>
+
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+
+</html>

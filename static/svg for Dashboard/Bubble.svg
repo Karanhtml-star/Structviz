@@ -1,0 +1,19 @@
+<svg width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Bigger left ring -->
+  <circle cx="16" cy="24" r="10" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- Smaller right ring -->
+  <circle cx="40" cy="24" r="7" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- Swap arrows (centered between rings) -->
+
+  <!-- Top arrow (left → right) -->
+  <path d="M24 14H32" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M30 12L32 14L30 16" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+
+  <!-- Bottom arrow (right → left) -->
+  <path d="M32 34H24" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M26 32L24 34L26 36" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+
+</svg>

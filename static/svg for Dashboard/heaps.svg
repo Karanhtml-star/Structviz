@@ -1,0 +1,36 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 -960 960 960"
+  width="24"
+  height="24"
+  fill="#E6E8F0"
+>
+  <!-- connections -->
+  <path
+    d="
+      M480-760 L280-520
+      M480-760 L680-520
+      M280-520 L160-280
+      M280-520 L400-280
+      M680-520 L560-280
+      M680-520 L800-280
+    "
+    stroke="#E6E8F0"
+    stroke-width="60"
+    stroke-linecap="round"
+    fill="none"
+  />
+
+  <!-- root (highest priority) -->
+  <circle cx="480" cy="-760" r="80"/>
+
+  <!-- second level -->
+  <circle cx="280" cy="-520" r="60"/>
+  <circle cx="680" cy="-520" r="60"/>
+
+  <!-- leaf nodes -->
+  <circle cx="160" cy="-280" r="50"/>
+  <circle cx="400" cy="-280" r="50"/>
+  <circle cx="560" cy="-280" r="50"/>
+  <circle cx="800" cy="-280" r="50"/>
+</svg>

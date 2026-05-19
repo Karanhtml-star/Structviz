@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Queue Visualizer</title>
+    <link rel="stylesheet" href="../static/css/Queue.css">
+</head>
+
+<body>
+    <div class="Dashboard" style="display: flex;">
+        <div class="side-bar">
+            <section class="top">
+                <img src="../static/svg for home/logo.svg" alt="">
+                <p style="padding: 0 4px;">StructViz</p>
+            </section>
+
+            <section class=" bottom">
+                <ol>
+                    <li>Navigation
+                        <Ul>
+                            <li><a href="../index.html" class="d1">Home</a></li>
+                            <li><a href="../dashboard/">Data Structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Data Structure
+                        <Ul>
+                            <li><a href="../stack/">Stacks</a></li>
+                            <li><a href="../queue/">Queue</a></li>
+                            <li><a href="../linkedlist/">Linked List</a></li>
+                            <li><a href="../heap/">Heap</a></li>
+                            <li><a href="../bubble/">Bubble-Sort</a></li>
+                            <li><a href="../bst/">Binary Search Tree</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>Application
+                        <ul>
+                            <li>Infix to Postfix Conversion</li>
+                        </ul>
+                    </li> -->
+                    </0l>
+            </section>
+
+
+
+        </div>
+
+        <div class="main-body" id="mainBody" style="padding-left: 10px;">
+            <div class="d-nav">
+                <img src="../static/svg for Dashboard/side-bar.svg" alt="" id="toggleSidebar"
+                    style="cursor: pointer;">
+                <a href="../index.html" class="d1">Home</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                  <a href="../dashboard/" class="d1">Dashboard</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                  <a href="../queue/" class="d1">Queue</a>
+            </div>
+
+            <div class="container">
+
+                <div class="header">
+                 <h1>Queue</h1>
+                    <p>A First-In-First-Out (FIFO) data structure.</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('visual')">Visualization</button>
+                    <button class="tab" onclick="showTab('explain')">Explanation</button>
+                </div>
+
+
+                <!-- VISUALIZATION -->
+
+
+                <div id="visual" class="main">
+
+                    <div>
+
+                        <div class="controls">
+
+                            <h3>Queue Controls</h3>
+
+                            <div class="input-row">
+                                <input id="valueInput" type="text" placeholder="Enter value">
+                                <button class="enqueue-btn" onclick="enqueue()">Enqueue</button>
+                            </div>
+
+                            <div class="button-row">
+                                <button class="dequeue-btn" onclick="dequeue()">Dequeue</button>
+                                <button class="front-btn" onclick="peekFront()">Front</button>
+                                <button class="rear-btn" onclick="peekRear()">Rear</button>
+                                <button class="clear-btn" onclick="clearQueue()">Clear</button>
+                            </div>
+
+                        </div>
+
+                        <div class="history-panel">
+
+                            <h3>Operation History</h3>
+                            <ul id="historyList"></ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Queue Visualization -->
+
+                    <div class="visualizer">
+
+                        <div class="label-row">
+                            <span>FRONT</span>
+                            <span>REAR</span>
+                        </div>
+
+                        <div id="queueContainer" class="queue-container"></div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- Explanation -->
+
+            <div id="explain" class="explanation">
+
+                <div class="exp-main">
+
+                    <h1>Understanding Queue (Data Structure)</h1>
+
+                    <p class="intro">
+                        Imagine standing in a line at a ticket counter 🎟️.
+                        The person who comes first gets served first, and new people join at the end.
+                        This is exactly how a <b>Queue</b> works.
+                    </p>
+
+                    <h2>What is a Queue?</h2>
+                    <p>
+                        A <b>Queue</b> is a linear data structure that follows the
+                        <b>FIFO (First In First Out)</b> principle.
+                        This means the element inserted first is the first one to be removed.
+                    </p>
+
+                    <h2>Basic Operations</h2>
+
+                    <p>There are five main operations performed on a queue:</p>
+
+                    <ul>
+                        <li><b>Enqueue:</b> Add an element at the rear (end)</li>
+                        <li><b>Dequeue:</b> Remove an element from the front</li>
+                        <li><b>Front (Peek):</b> View the first element</li>
+                        <li><b>Overflow:</b> Occurs when the queue is full</li>
+                        <li><b>Underflow:</b> Occurs when the queue is empty</li>
+                    </ul>
+
+                    <h2>Step-by-Step Example</h2>
+
+                    <p>
+                        Let’s say we add three elements: <b>10, 20, 30</b> into the queue.
+                    </p>
+
+                    <p class="label">Queue after Enqueue:</p>
+
+                    <table>
+                        <tr>
+                            <th>Front</th>
+                            <th></th>
+                            <th>Rear</th>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>30</td>
+                        </tr>
+                    </table>
+
+                    <p>
+                        Here, <b>10</b> is at the front because it was inserted first.
+                    </p>
+
+                    <p>
+                        Now, if we perform a <b>Dequeue</b> operation:
+                    </p>
+
+                    <p class="label">Queue after Dequeue:</p>
+
+                    <table>
+                        <tr>
+                            <th>Front</th>
+                            <th></th>
+                            <th>Rear</th>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>30</td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                    <p>
+                        The element <b>10</b> is removed first, proving the FIFO concept.
+                    </p>
+
+                    <h2>Real-Life Applications</h2>
+
+                    <ul>
+                        <li>Ticket booking systems</li>
+                        <li>CPU scheduling</li>
+                        <li>Printer queue</li>
+                        <li>Handling requests in servers</li>
+                    </ul>
+
+                    <p class="conclusion">
+                        👉 In short, a queue ensures fair processing by following the order of arrival.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            const toggleBtn = document.getElementById("toggleSidebar");
+            const sidebar = document.querySelector(".side-bar");
+            const mainBody = document.getElementById("mainBody");
+
+            toggleBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("closed");
+                mainBody.classList.toggle("shifted");
+            });
+        </script>
+        <script src="../static/js/Queue.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+
+</html>

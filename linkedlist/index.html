@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Linked List Visualizer</title>
+    <link rel="stylesheet" href="../static/css/LL.css">
+</head>
+
+<body>
+
+    <div class="Dashboard" style="display: flex;">
+        <div class="side-bar">
+            <section class="top">
+                <img src="../static/svg for home/logo.svg" alt="">
+                <p style="padding: 0 4px;">StructViz</p>
+            </section>
+
+            <section class=" bottom">
+                <ol>
+                    <li>Navigation
+                        <Ul>
+                            <li><a href="../index.html" class="d1">Home</a></li>
+                           <li><a href="../dashboard/">Data Structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Data Structure
+                        <Ul>
+                            <li><a href="../stack/">Stacks</a></li>
+                            <li><a href="../queue/">Queue</a></li>
+                            <li><a href="../linkedlist/">Linked List</a></li>
+                            <li><a href="../heap/">Heap</a></li>
+                            <li><a href="../bubble/">Bubble-Sort</a></li>
+                            <li><a href="../bst/">Binary Search Tree</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>Application
+                        <ul>
+                            <li>Infix to Postfix Conversion</li>
+                        </ul>
+                    </li> -->
+                    </0l>
+            </section>
+
+
+
+        </div>
+
+        <!-- MAIN -->
+        <div class="main-body" id="mainBody">
+
+            <!-- NAV -->
+            <div class="d-nav">
+                <img src="../static/svg for Dashboard/side-bar.svg" id="toggleSidebar">
+                <a href="../index.html" class="d1">Home</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg">
+                <a href="../dashboard/" class="d1">Dashboard</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg">
+                <a href="../linkedlist/" class="d1">Link-list</a>
+            </div>
+
+            <div class="container">
+
+                <div class="header">
+                    <h1>Linked List</h1>
+                    <p>A dynamic data structure where each node points to the next node.</p>
+                </div>
+
+                <!-- TABS -->
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('visual')">Visualization</button>
+                    <button class="tab" onclick="showTab('explain')">Explanation</button>
+                </div>
+
+                <!-- VISUAL -->
+                <div id="visual" class="main">
+
+                    <div>
+
+                        <div class="controls">
+
+                            <h3>Linked List Controls</h3>
+
+                            <div class="input-row">
+                                <input id="valueInput" type="text" placeholder="Enter value">
+                            </div>
+
+                            <div class="button-row">
+                                <button onclick="insertHead()">Insert Head</button>
+                                <button onclick="insertTail()">Insert Tail</button>
+                            </div>
+
+                            <div class="button-row">
+                                <button class="delete-btn" onclick="deleteNode()">Delete</button>
+                                <button class="clear-btn" onclick="clearList()">Clear</button>
+                            </div>
+
+                            <!-- <div class="button-row">
+                                <button onclick="searchNode()">Search</button>
+                            </div> -->
+
+                        </div>
+
+                        <div class="history-panel">
+                            <h3>Operation History</h3>
+                            <ul id="historyList"></ul>
+                        </div>
+
+                    </div>
+
+                    <!-- VISUALIZER -->
+                    <div class="visualizer">
+
+                         <div class="label-row">
+                            <span>HEAD</span>
+                            <span>TAIL</span>
+                        </div>
+
+                        <div class="board">
+                            <div id="listContainer" class="list-container"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- EXPLANATION -->
+            <div id="explain" class="explanation">
+
+                <div class="exp-main">
+
+                    <h1>Understanding Linked List (Data Structure)</h1>
+
+                    <p class="intro">
+                        Imagine a treasure hunt 🗺️ where each clue tells you where the next clue is hidden.
+                        You can’t jump directly to the end—you must follow the path step by step.
+                        That’s exactly how a <b>Linked List</b> works.
+                    </p>
+
+                    <h2>What is a Linked List?</h2>
+                    <p>
+                        A <b>Linked List</b> is a linear data structure where elements are not stored in
+                        continuous memory locations.
+                        Instead, each element (called a <b>node</b>) stores:
+                    </p>
+
+                    <ul>
+                        <li><b>Data</b> → the value</li>
+                        <li><b>Next</b> → pointer/reference to the next node</li>
+                    </ul>
+
+                    <h2>Structure of a Node</h2>
+
+                    <p class="label">Each node looks like:</p>
+
+                    <table>
+                        <tr>
+                            <th>Data</th>
+                            <th>Next</th>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Address</td>
+                        </tr>
+                    </table>
+
+                    <h2>Step-by-Step Example</h2>
+
+                    <p>
+                        Let’s create a linked list with values: <b>10 → 20 → 30</b>
+                    </p>
+
+                    <p class="label">Representation:</p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        10 → 20 → 30 → NULL
+                    </p>
+
+                    <p>
+                        Each node points to the next one, and the last node points to <b>NULL</b>,
+                        which means the end of the list.
+                    </p>
+
+                    <h2>Basic Operations</h2>
+
+                    <ul>
+                        <li><b>Insertion:</b> Add a new node</li>
+                        <li><b>Deletion:</b> Remove a node</li>
+                        <li><b>Traversal:</b> Visit each node one by one</li>
+                        <li><b>Search:</b> Find an element</li>
+                    </ul>
+
+                    <h2>Insertion Example</h2>
+
+                    <p>
+                        Insert <b>40</b> at the end:
+                    </p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        10 → 20 → 30 → 40 → NULL
+                    </p>
+
+                    <h2>Deletion Example</h2>
+
+                    <p>
+                        Remove <b>20</b>:
+                    </p>
+
+                    <p style="text-align:center; font-size:20px;">
+                        10 → 30 → NULL
+                    </p>
+
+                    <p>
+                        Notice how links are updated instead of shifting elements like arrays.
+                    </p>
+
+                    <h2>Why Use Linked List?</h2>
+
+                    <ul>
+                        <li>No fixed size (dynamic)</li>
+                        <li>Efficient insertion and deletion</li>
+                        <li>No need to shift elements</li>
+                    </ul>
+
+                    <h2>Real-Life Applications</h2>
+
+                    <ul>
+                        <li>Music playlist navigation 🎵</li>
+                        <li>Undo/Redo operations</li>
+                        <li>Browser forward/backward navigation</li>
+                    </ul>
+
+                    <p class="conclusion">
+                        👉 Linked Lists are powerful when flexibility and dynamic memory are required.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+        /* SIDEBAR TOGGLE */
+        const toggleBtn = document.getElementById("toggleSidebar");
+        const sidebar = document.querySelector(".side-bar");
+        const mainBody = document.getElementById("mainBody");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("closed");
+            mainBody.classList.toggle("shifted");
+        });
+
+        /* TABS */
+        function showTab(tab) {
+
+            document.getElementById("visual").style.display = "none";
+            document.getElementById("explain").style.display = "none";
+
+            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+
+            if (tab === "visual") {
+                document.getElementById("visual").style.display = "flex";
+                document.querySelectorAll(".tab")[0].classList.add("active");
+            }
+
+            if (tab === "explain") {
+                document.getElementById("explain").style.display = "block";
+                document.querySelectorAll(".tab")[1].classList.add("active");
+            }
+        }
+
+    </script>
+
+    <script src="../static/js/LL.js"></script>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+
+</html>

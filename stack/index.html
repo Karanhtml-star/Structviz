@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stack Visualizer</title>
+    <link rel="stylesheet" href="../static/css/Stack.css">
+</head>
+
+<body>
+    <div class="Dashboard" style="display: flex;">
+        <div class="side-bar">
+            <section class="top">
+                <img src="../static/svg for home/logo.svg" alt="">
+                <p style="padding: 0 4px;">StructViz</p>
+            </section>
+
+            <section class=" bottom">
+                <ol>
+                    <li>Navigation
+                        <Ul>
+                            <li><a href="../index.html" class="d1">Home</a></li>
+                            <li><a href="../dashboard/">Data Structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Data Structure
+                        <Ul>
+                            <li><a href="../stack/">Stacks</a></li>
+                            <li><a href="../queue/">Queue</a></li>
+                            <li><a href="../linkedlist/">Linked List</a></li>
+                            <li><a href="../heap/">Heap</a></li>
+                            <li><a href="../bubble/">Bubble-Sort</a></li>
+                            <li><a href="../bst/">Binary Search Tree</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>Application
+                        <ul>
+                            <li>Infix to Postfix Conversion</li>
+                        </ul>
+                    </li> -->
+                    </0l>
+            </section>
+
+
+
+        </div>
+
+        
+        <div class="main-body" id="mainBody" style="padding-left: 10px;">
+            <div class="d-nav">
+                <img src="../static/svg for Dashboard/side-bar.svg" alt="" id="toggleSidebar"
+                    style="cursor: pointer;">
+                <a href="../index.html" class="d1">Home</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                  <a href="../dashboard/" class="d1">Dashboard</a>
+                <img src="../static/svg for Dashboard/right-arrow.svg" alt="">
+                  <a href="../stack/" class="d1">Stack</a>
+            </div>
+
+
+            <div class="container">
+
+                <div class="header">
+                    <h1>Stack</h1>
+                    <p>A Last-In-First-Out (LIFO) data structure.</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('visual')">Visualization</button>
+                    <button class="tab" onclick="showTab('explain')">Explanation</button>
+                </div>
+
+                <!-- VISUALIZATION -->
+
+                <div id="visual" class="main">
+
+                    <div>
+
+                        <div class="controls">
+
+                            <h3>Stack Controls</h3>
+
+                            <div class="input-row">
+                                <input id="valueInput" type="text" placeholder="Enter value">
+                                <button class="push-btn" onclick="pushStack()">Push</button>
+                            </div>
+
+                            <div class="button-row">
+                                <button class="pop-btn" onclick="popStack()">Pop</button>
+                                <button class="peek-btn" onclick="peekStack()">Peek</button>
+                                <button class="clear-btn" onclick="clearStack()">Clear</button>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="history-panel">
+
+                            <h3>Operation History</h3>
+
+                            <ul id="historyList"></ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="visualizer">
+
+                        <div class="top-label">TOP</div>
+
+                        <div id="stackContainer" class="stack-container"></div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- EXPLANATION -->
+            <div id="explain" class="explanation">
+
+                <div class="exp-main">
+
+                    <h1>Understanding Stack (Data Structure)</h1>
+
+                    <p class="intro">
+                        Imagine you are stacking books on a table 📚. You always place a new book on top,
+                        and when you need one, you remove the topmost book first.
+                        This is exactly how a <b>Stack</b> works in computer science.
+                    </p>
+
+                    <h2>What is a Stack?</h2>
+                    <p>
+                        A <b>Stack</b> is a linear data structure that follows the
+                        <b>LIFO (Last In First Out)</b> principle.
+                        This means the element added last is the first one to be removed.
+                    </p>
+
+                    <h2>Basic Operations</h2>
+
+                    <p>There are five main operations performed on a stack:</p>
+
+                    <ul>
+                        <li><b>Push:</b> Adds an element to the top of the stack</li>
+                        <li><b>Pop:</b> Removes the top element from the stack</li>
+                        <li><b>Peek:</b> Displays the top element without removing it</li>
+                        <li><b>Overflow:</b> Happens when we try to push into a full stack</li>
+                        <li><b>Underflow:</b> Happens when we try to pop from an empty stack</li>
+                    </ul>
+
+                    <h2>Step-by-Step Example</h2>
+
+                    <p>
+                        Let’s understand with a simple example.
+                        Suppose we push three elements: <b>10, 20, 30</b>.
+                    </p>
+
+                    <p class="label">Stack after pushing:</p>
+
+                    <table>
+                        <tr>
+                            <th>Top</th>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                        </tr>
+                    </table>
+
+                    <p>
+                        Notice how <b>30</b> is at the top because it was inserted last.
+                    </p>
+
+                    <p>
+                        Now, if we perform a <b>Pop</b> operation:
+                    </p>
+
+                    <p class="label">Stack after popping:</p>
+
+                    <table>
+                        <tr>
+                            <th>Top</th>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                        </tr>
+                    </table>
+
+                    <p>
+                        The element <b>30</b> is removed first, proving the LIFO concept.
+                    </p>
+
+                    <h2>Real-Life Applications</h2>
+
+                    <ul>
+                        <li>Undo/Redo operations in editors</li>
+                        <li>Browser history navigation</li>
+                        <li>Function calls (Call Stack)</li>
+                        <li>Expression evaluation (like postfix/prefix)</li>
+                    </ul>
+
+                    <p class="conclusion">
+                        👉 In short, a stack is simple but extremely powerful and widely used in programming.
+                    </p>
+
+                </div>
+
+            </div>
+            <script>
+                const toggleBtn = document.getElementById("toggleSidebar");
+                const sidebar = document.querySelector(".side-bar");
+                const mainBody = document.getElementById("mainBody");
+
+                toggleBtn.addEventListener("click", () => {
+                    sidebar.classList.toggle("closed");
+                    mainBody.classList.toggle("shifted");
+                });
+            </script>
+            <script src="../static/js/Stack.js"></script>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+
+</html>
